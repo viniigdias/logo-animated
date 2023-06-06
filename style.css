@@ -1,0 +1,114 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: 0;
+}
+
+.efeito{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.cube{
+    width: 100px;
+    height: 100px;
+    border-radius: 18px;
+    background-color: #ab226d;
+    position: relative;
+    animation: mover  2s 0s reverse ease both running;
+}
+
+.cube .maiorq{
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%) rotate(45deg);
+}
+.cube .maiorq::after,
+.cube .maiorq::before{
+    content: "";
+    width: 30px;
+    height: 8px;
+    background-color: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.cube .maiorq::before{
+    width: 8px;
+    height: 30px;
+    left: initial;
+    right: 0;
+}
+.cube .underline{
+    width: 25px;
+    height: 7px;
+    background-color: white;
+    position: absolute;
+    bottom: 30px;
+    right: 20px;
+}
+
+.efeito .cube{
+    position: relative;
+    animation: animate 0.2s ease infinite;
+}
+
+@keyframes animate
+{
+    0%{
+        transform: translateY(-2px);
+    }
+    50%{
+        transform: translateY(2px);
+    }
+}
+
+.efeito .cube::before{
+    content: '';
+    position: absolute;
+    bottom: -200px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 10px;
+    height: 200px;
+    background: linear-gradient(#fff, transparent);
+}
+
+.efeito .cube::after{
+    content: '';
+    position: absolute;
+    bottom: -200px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 10px;
+    height: 200px;
+    background: linear-gradient(#fff, transparent);
+    filter: blur(20px);
+}
+
+.efeito i{
+    position: absolute;
+    top: -250px;
+    background: #ab226d;
+    animation: animateStars linear infinite;
+}
+
+@keyframes animateStars{
+    0%{
+        transform: translateY(0);
+    }
+    100%{
+        transform: translateY(200vh);
+    }
+}
+
+
